@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
- background-image:url('ok.jpg');
+ background-image:url('ok.png');
   /*background-image: url('https://tse3.mm.bing.net/th/id/OIP.N7TeojqSF6cv3TiBLwo6PwHaFj?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3');
   background-image: url('https://th.bing.com/th/id/R.84ae60fcae6fd9f16c36e745676e6752?rik=0bBhy8CL%2bmxtZw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fGTrby6G.jpg&ehk=eqVeTLl4%2b%2f38QuCaxbE3LyI3M65fD7T5gtaz%2b4baVt8%3d&risl=&pid=ImgRaw&r=0');
  */ 
@@ -233,3 +233,4 @@ footer p {
 .colon {
   animation: blink 1s step-end infinite;
 }
+

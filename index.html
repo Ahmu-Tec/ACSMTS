@@ -3,93 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="style.css">
   <title>Ahmu-CCA</title>
-
-  <!-- Font Awesome (for logo placeholder icon) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- LOGO -->
-  <div class="logo-container">
-    <img
-      src="logo.png"
-      alt="Awolia College Logo"
-      class="logo-img"
-      onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex';"
-    >
-
-    <div class="logo-placeholder" id="logo-placeholder">
-      <i class="fas fa-university"></i>
-      <span>Awolia College</span>
-    </div>
-  </div>
-
-  <!-- HEADER -->
   <header class="hero">
-    <marquee behavior="scroll" direction="left">
-      <h1>
-        WELCOME TO Awolia College CCA –<br>
-        Arabic Language and Literature ONLINE PORTAL
-      </h1>
-    </marquee>
+    <marqueje behavior="scrolls"  direction="left" ><h1>WELCOME TO Awolia College CCA-<br> Arabic language and Litrature ONLINE PORTAL</h1>
+</marquee> 
     <p>Empowering Education, Inspiring Futures</p>
   </header>
 
-  <!-- MAIN SECTION -->
-  <section class="section">
+  <section  class="section">
     <div class="container">
-      <a href="DipR.html"><button>Diploma (R)</button></a>
-      <a href="dipw.html"><button>Diploma (Ex)</button></a>
-      <a href="deg.html"><button>Degree (R)</button></a>
+      <a href="DipR.html">
+        <button class="btn-">Diploma (R)</button>
+      </a>
+      <a href="dipw.html">
+        <button class="btn-primary">Diploma (Ex)</button>
+      </a>
+      <a href="deg.html">
+        <button class="btn-primary">Degree(R)</button>
+      </a>
+       
+   
     </div>
-
-    <p class="info-text">
-      <b>
-        Access your Class Room Assessments (quizzes, project work, classwork,
-        mid-exam, final-exam and Total from 100%)
-      </b>
-    </p>
+    <p class="info-text"><b>Access your Class Room Assessments (quizzes, project work, classwork, mid-exam, final-exam and Total(Sum) from 100%)</b>.</p>
   </section>
 
-  <!-- FOOTER -->
+  <main>
+    <!-- Main content can go here if needed -->
+  </main>
+
   <footer>
-    <p>© 2025 Ahmu Tec | Designed for Excellence</p>
-    <p class="phone">Phone No.: +251 912 66 87 87</p>
+    <div class="footer">
+      <p>© 2025 Ahmu tec | Designed for Excellence</p>
+        <p style="font-family: 'Courier New', Courier, monospace;">Phone No.: +251 912 66 87 87</p>  
+    </div>
   </footer>
 
-  <!-- CLOCK -->
   <div class="clock">
     <div class="time" id="time"></div>
   </div>
 
-  <!-- CLOCK SCRIPT -->
   <script>
     function updateClock() {
       const now = new Date();
-      let h = now.getHours();
-      let m = now.getMinutes();
-      let s = now.getSeconds();
-      const p = h >= 12 ? "PM" : "AM";
-
-      h = h % 12 || 12;
-      h = h < 10 ? "0" + h : h;
-      m = m < 10 ? "0" + m : m;
-      s = s < 10 ? "0" + s : s;
-
-      document.getElementById("time").innerHTML =
-        `${h}<span class="colon">:</span>${m}<span class="colon">:</span>${s} ${p}`;
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let seconds = now.getSeconds();
+      const period = hours >= 12 ? "PM" : "AM";
+      hours = hours % 12 || 12;
+      hours = hours < 10 ? "0" + hours : hours;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      const timeString = `${hours}<span class="colon">:</span>${minutes}<span class="colon">:</span>${seconds} ${period}`;
+      document.getElementById("time").innerHTML = timeString;
     }
-
     updateClock();
     setInterval(updateClock, 1000);
   </script>
-
 </body>
 </html>
-
-

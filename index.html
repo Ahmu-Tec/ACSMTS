@@ -7,13 +7,16 @@
   <title>Ahmu-CCA</title>
 </head>
 <body>
-   <!-- Logo Container - Updated -->
+   <!-- Logo Container -->
+
   <div class="logo-container">
-    <div class="logo-icon">
+    <img src="logo.png" alt="Awolia College Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex';">
+    <div class="logo-placeholder" id="logo-placeholder" style="display: none;">
       <i class="fas fa-university"></i>
+      <span>Awolia College</span>
     </div>
-    <div class="logo-text">Awolia College</div>
   </div>
+
   
   <header class="hero">
     <marqueje behavior="scrolls"  direction="left" ><h1>WELCOME TO Awolia College CCA-<br> Arabic language and Litrature ONLINE PORTAL</h1>
@@ -66,12 +69,28 @@
       seconds = seconds < 10 ? "0" + seconds : seconds;
       const timeString = `${hours}<span class="colon">:</span>${minutes}<span class="colon">:</span>${seconds} ${period}`;
       document.getElementById("time").innerHTML = timeString;
+      
+      // Check if logo image exists
+      const logoImg = document.querySelector('.logo-img');
+      const logoPlaceholder = document.getElementById('logo-placeholder');
+      
+      // If logo doesn't exist, show placeholder
+      logoImg.onerror = function() {
+        logoImg.style.display = 'none';
+        logoPlaceholder.style.display = 'flex';
+      };
+      
+      // Check if logo loads successfully
+      logoImg.onload = function() {
+        logoPlaceholder.style.display = 'none';
+        this.style.display = 'block';}
     }
     updateClock();
     setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
+
 
 
 

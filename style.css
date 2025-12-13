@@ -234,32 +234,59 @@ footer p {
   animation: blink 1s step-end infinite;
 }
 
- /* Logo Container - Updated with new design */
-    .logo-container {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 3000;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: white;
-    }
+/* Logo Container */
+/* MEDIUM LOGO SIZE */
+.logo-container {
+  position: fixed;
+  top: 5px;
+  left: 20px;
+  z-index: 3000;
+  width: clamp(70px, 7vw, 100px);
+  height: clamp(70px, 7vw, 100px);
+  border-radius: 50%;
+  background: rgb(196, 209, 202);
+  border: 3px solid rgb(250, 250, 250);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    .logo-icon {
-      font-size: 1.8rem;
-      color: rgb(17, 168, 84);
-      background: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid rgb(17, 168, 84);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+
+.logo-container:hover {
+  transform: scale(1.05);
+  border-color: #ff9800;
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgb(17, 168, 84);   /* Remove white bg behind logo */
+  border-radius: 50%;
+}
+
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1b5e20;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.logo-placeholder i {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #1b5e20;
+}
 
     .logo-text {
       font-size: 1.5rem;
@@ -268,27 +295,26 @@ footer p {
       color: white;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
- @media (max-width: 480px) {
-      .logo-container {
-        top: 8px;
-        left: 8px;
+
+@media (max-width: 768px) {
+  .logo-container {
+    position: fixed; /* Keep fixed on mobile */
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    z-index: 3000;
       }
-      
-      .logo-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1.1rem;
-      }
-      
-      .logo-text {
-        font-size: 1rem;
-                            }
-   /* Responsive Design */
-    @media (max-width: 1024px) {
-      .logo-container {
-        top: 15px;
-        left: 15px;
-      }
+  
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .logo-container {
+    width: 80px;
+    height: 80px;
+    top: 15px;
+    left: 15px;
+  }
       
       .logo-icon {
         width: 45px;
@@ -299,6 +325,4 @@ footer p {
       .logo-text {
         font-size: 1.3rem;
       }
-      
-
 

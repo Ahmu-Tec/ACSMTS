@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
- background-image:url('ok.jpg');
+ background-image:url('ok.png');
   /*background-image: url('https://tse3.mm.bing.net/th/id/OIP.N7TeojqSF6cv3TiBLwo6PwHaFj?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3');
   background-image: url('https://th.bing.com/th/id/R.84ae60fcae6fd9f16c36e745676e6752?rik=0bBhy8CL%2bmxtZw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fGTrby6G.jpg&ehk=eqVeTLl4%2b%2f38QuCaxbE3LyI3M65fD7T5gtaz%2b4baVt8%3d&risl=&pid=ImgRaw&r=0');
  */ 
@@ -31,15 +31,18 @@ p {
   background: repeating-conic-gradient(#553c9a 0%, #553c9a 10%, #ee4b2b 10%, #ee4b2b 20%, #00c2cb 20%, #00c2cb 30%);
   color: white;
   text-align: center;
-  padding: clamp(1rem, 2vw, 1.5rem) 0; /* Reduced padding */
+  padding: clamp(0.6rem, 1.5vw, 1.5rem) 0; /* Reduced padding */
   clip-path: polygon(6% 10%, 90% 6%, 100% 100%, 0% 100%);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
 }
 
-.hero h1 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
-  margin: clamp(0.25rem, 1vw, 0.5rem) 0; /* Reduced margin */
+.hero h1 {/* Responsive H1 */
+  font-size: clamp(1rem, 4.5vw, 2rem); /* FIXED */
+  margin: clamp(0.2rem, 1vw, 0.5rem) 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero p {
@@ -147,6 +150,11 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+}
 
 /* Small screens (mobile, up to 600px) */
 @media (max-width: 600px) {
@@ -185,6 +193,41 @@ footer p {
 
   .time {
     font-size: clamp(8px, 2.5vw, 12px);
+  }
+}
+/* Logo Container */
+.logo-container {
+  position: fixed;              /* stays visible on scroll */
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+}
+
+/* Logo Image */
+.logo {
+  width: clamp(50px, 8vw, 100px);
+  height: clamp(50px, 8vw, 100px);
+  border-radius: 50%;
+  border: 3px solid #f7f4ef;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+  background-color: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect (desktop only) */
+@media (hover: hover) {
+  .logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .logo-container {
+    top: 0.5rem;
+    left: 0.5rem;
   }
 }
 
